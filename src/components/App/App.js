@@ -13,15 +13,24 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      local
+      local,
+      entertainment,
+      health,
+      science,
+      technology,
+      currentPage: local
     }
+  }
+
+  changePage = (clickedPage) => {
+    this.setState({ currentPage: this.state[clickedPage] })
   }
 
   render () {
     return (<main>
       <h1>What's News</h1>
-        <Menu />
-        <NewsContainer ideas={this.state.local}/>
+        <Menu changePage={this.changePage} />
+        <NewsContainer news={this.state.currentPage} />
       </main>)
   }
 }
