@@ -3,9 +3,9 @@ import './NewsContainer.css'
 import NewsArticle from '../NewsArticle/NewsArticle'
 
 
-const NewsContainer = (props) => {
-  return props.ideas.map(newsArticle => {
-    return <NewsArticle article={newsArticle}/>
+const NewsContainer = ( {news} ) => {
+  return news.map(newsArticle => {
+    return <NewsArticle key={newsArticle.id} article={newsArticle}/>
   })
 }
 
