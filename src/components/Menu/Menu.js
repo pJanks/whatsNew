@@ -1,14 +1,18 @@
 import React from 'react';
 import './Menu.css'
 
-const Menu = () => {
+const Menu = (props) => {
 
+  const getPageName = (event) => {
+    props.changePage(event.target.name)
+  }
+  // console.log(news);
   return (<aside>
-    <button>local</button>
-    <button>entertainment</button>
-    <button>health</button>
-    <button>science</button>
-    <button>technology</button>
+    <button name='local' onClick={getPageName}>local</button>
+    <button name='entertainment' onClick={getPageName}>entertainment</button>
+    <button name='health' onClick={getPageName}>health</button>
+    <button name='science' onClick={getPageName}>science</button>
+    <button name='technology' onClick={getPageName}>technology</button>
     </aside>)
 }
 
