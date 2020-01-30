@@ -13,7 +13,7 @@ bar and, as per the spec, a user can enter a search query and search for it with
 current news subject by either clicking the search button or pressing enter.
 
 ### Screenshot
-![screenshot 1]('./screenshots/screenshot.png')
+![screenshot 1]('./screenshots/Screenshot.png')
 
 ### Technologies Used
 - React
