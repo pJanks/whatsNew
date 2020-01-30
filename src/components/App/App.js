@@ -27,10 +27,14 @@ class App extends Component {
   }
 
   render () {
-    return (<main>
-      <h1>What's News</h1>
+      return (<main className='everything'>
+          <header>
+            <h1>What's News</h1>
+          </header>
+          <section className='main-content'>
         <Menu changePage={this.changePage} />
         <NewsContainer news={this.state.currentPage} />
+          </section>
       </main>)
   }
 }
