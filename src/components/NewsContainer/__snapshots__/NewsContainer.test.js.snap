@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewsContainer should match the snapshot 1`] = `
+<section
+  className="news-container"
+>
+  <NewsArticle
+    article={
+      Object {
+        "description": "something crazy",
+        "headline": "crazy news",
+        "id": 3,
+        "img": "aPicture",
+        "url": "www.hi.com",
+      }
+    }
+    key="3"
+  />
+  <NewsArticle
+    article={
+      Object {
+        "description": "something even crazier",
+        "headline": "more crazy news",
+        "id": 4,
+        "img": "anotherPicture",
+        "url": "www.hello.com",
+      }
+    }
+    key="4"
+  />
+</section>
+`;
