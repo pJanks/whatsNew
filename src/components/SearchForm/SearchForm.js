@@ -28,17 +28,18 @@ enterPressed = (event) => {
     }
 }
 
-  render = () => {
-    return (<form>
-      <button onClick={this.runSearch}>Search Here</button>
-      <input
-      type='text'
-      onChange={this.updateQuery}
-      value={this.state.query}
-      onKeyPress={this.enterPressed}
-      />
-      </form>)
-    }
+render = () => {
+  return (<form>
+    <button onClick={this.runSearch}>Search Here</button>
+    <input
+    type='text'
+    onChange={this.updateQuery}
+    value={this.state.query}
+    onKeyPress={this.enterPressed}
+    placeholder='Enter you search here'
+    />
+    </form>)
+  }
 }
 
 
