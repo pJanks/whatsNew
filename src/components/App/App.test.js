@@ -4,10 +4,12 @@ import App from './App';
 import { shallow } from 'enzyme';
 
 describe('App', () => {
-  let wrapper
+  let wrapper, instance;
 
   beforeEach(() => {
     wrapper = shallow(<App />)
+    instance = wrapper.instance()
+
   })
 
   it('should start with the expected states', () => {
@@ -20,31 +22,23 @@ describe('App', () => {
     expect(wrapper.state().currentPage.length).toEqual(8);
   });
 
-//   let wrapper;
-// const mockAddIdea = jest.fn()
-//
-// beforeEach(() => {
-//   wrapper = shallow(<Form addIdea={ mockAddIdea } />)
-// });
-//
-// it('should match the snapshot', () => {
-//     expect(wrapper).toMatchSnapshot()
-// });
+  it('should be able to change the news articles shown with changePage', () => {
+
+    let local = [{localNews: 'someNews'}, {moreLocalNews: 'moreNews'}]
+    instance.state = {
+      local: local,
+      currentPage: [{scienceNews: 'coolNews'}, {moreScience: 'real cool'}]
+    }
+    instance.changePage('local')
+    expect(instance.state.currentPage).toEqual(local)
+  })
+
 
 it('should match the snapshot with all data passed in correctly', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
 
-  // it('should be able to change the currentPage in state displayed with changePage', () => {
-  //   instance.state = {
-  //     newData: [{ someNews: 'news', moreNews: 'its great' }, { someOtherNews: 'otherNews', moreOtherNews: 'its so great' }],
-  //     currentPage: [{local: 'local news', moreLocal: 'moreNews'}, {lastNews: 'end'}]
-  //   }
-  //   expect(instance.state.currentPage).toEqual([{local: 'local news', moreLocal: 'moreNews'}, {lastNews: 'end'} ])
-  //   instance.changePage(newData)
-  //   expect(instance.state.currentPage).toEqual(newData)
-  // });
 
   it('renders without crashing', () => {
     const div = document.createElement('div');
