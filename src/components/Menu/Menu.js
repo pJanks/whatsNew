@@ -6,7 +6,7 @@ const Menu = (props) => {
   const getPageName = (event) => {
     props.changePage(event.target.name)
   }
-  // console.log(news);
+
   return (<aside>
     <button name='local' onClick={getPageName}>local</button>
     <button name='entertainment' onClick={getPageName}>entertainment</button>
