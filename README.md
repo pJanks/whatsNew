@@ -12,9 +12,6 @@ by clicking on a button on the left of the screen. In the header there is also a
 bar and, as per the spec, a user can enter a search query and search for it within the
 current news subject by either clicking the search button or pressing enter.
 
-### Screenshot
-![screenshot 1]('./screenshots/Screenshot.png')
-
 ### Technologies Used
 - React
 - JavaScript
