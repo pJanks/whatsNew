@@ -7,7 +7,7 @@ import technology from '../../data/technology';
 import './App.css';
 import Menu from '../Menu/Menu'
 import NewsContainer from '../NewsContainer/NewsContainer'
-// import NewsArticle from '../NewsArticle/NewsArticle'
+import SearchForm from '../SearchForm/SearchForm'
 
 class App extends Component {
   constructor() {
@@ -22,6 +22,19 @@ class App extends Component {
     }
   }
 
+  searchFromForm = (query) => {
+    let searchMatches = this.state.currentPage.filter(article => {
+      if (!article.description.toLowerCase().includes(query.toLowerCase()) && !article.headline.toLowerCase().includes(query.toLowerCase())) {
+        return
+      } else {
+        return article
+      }
+    })
+    if (searchMatches.length) {
+      this.setState({ currentPage: searchMatches})
+    }
+  }
+
   changePage = (clickedPage) => {
     this.setState({ currentPage: this.state[clickedPage] })
   }
@@ -30,6 +43,7 @@ class App extends Component {
       return (<main className='everything'>
           <header>
             <h1>What's News</h1>
+            <SearchForm searchFromForm={this.searchFromForm} />
           </header>
           <section className='main-content'>
         <Menu changePage={this.changePage} />
