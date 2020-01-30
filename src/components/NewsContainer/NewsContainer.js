@@ -4,9 +4,10 @@ import NewsArticle from '../NewsArticle/NewsArticle'
 
 
 const NewsContainer = ( {news} ) => {
-  return news.map(newsArticle => {
-    return <NewsArticle key={newsArticle.id} article={newsArticle}/>
-  })
+  return (<section className='news-container'>
+    {news.map(newsArticle => {
+    return <NewsArticle key={newsArticle.id} article={newsArticle} />
+  })}</section>)
 }
 
 export default NewsContainer;
