@@ -1,0 +1,21 @@
+img {
+  height: 350px;
+  width: 300px;
+}
+
+p,
+h2{
+  color: black;
+  margin: 10px;
+  width: 300%;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  margin: 30px;
+  margin-bottom: 200px;
+  text-align: center;
+  width: 30%;
+}

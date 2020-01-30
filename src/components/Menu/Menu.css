@@ -1,0 +1,17 @@
+button {
+  font-size: 120%;
+  height: 30px;
+  margin: 20px;
+  width: 130px;
+}
+
+button:hover {
+  border: 1px solid blue;
+  cursor: pointer;
+
+}
+
+aside {
+  border-right: 2px solid #000;
+  width: 15%;
+}
